@@ -1,0 +1,22 @@
+Main things
+---13x13 gird
+---each cell has 4 smaller cells
+
+-Main loop
+--draw
+--update
+--collision
+--bullet collision
+--brick break
+
+
+-Objects needed
+--Player
+--Tank
+--Bricks
+--bullet
+
+-Subclasses
+
+
+
