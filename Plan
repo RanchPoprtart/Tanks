@@ -13,10 +13,12 @@ Main things
 -Objects needed
 --Player
 --Tank
+---Tank needs up, down right and left animations
 --Bricks
 --bullet
 
 -Subclasses
+
 
 
 

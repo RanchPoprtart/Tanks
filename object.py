@@ -10,16 +10,19 @@ class GameObject(pyglet.sprite.Sprite):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-
-class Player(GameObject):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-
-
 class Bullet(GameObject):
     def __init__(self, *args, **kwargs):
         super().__init__( *args, **kwargs)
+
+
+class Tank(GameObject):
+    x_speed = 10
+    y_speed = 10
+
+    def __init__(self, * args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
 
 
 class Blocks(GameObject):
