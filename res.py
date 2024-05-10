@@ -15,4 +15,5 @@ def center_img(img):
     img.anchor_y = img.height // 2
 
 center_img(tank)
+center_img(bullet)
 

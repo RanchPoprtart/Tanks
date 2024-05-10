@@ -9,17 +9,16 @@ import math
 class GameObject(pyglet.sprite.Sprite):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-    def check_for_collision(self, object):
-        pass
 
 
 class Tank(GameObject):
 
     def __init__(self, * args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.keys = {"left": False, "right": False, "UP": False, "DOWN": False}
+        self.keys = {"left": False, "right": False, "UP": False, "DOWN": False, "SPACE": False}
         self.key_handler = key.KeyStateHandler()
         self.dir = ""
+        self.fire = ""
     def on_key_press(self, symbol, mod):
         direction = 0
         if symbol == key.LEFT:
@@ -34,6 +33,11 @@ class Tank(GameObject):
         if symbol == key.DOWN:
             self.keys["DOWN"] = True
             self.dir = "DOWN"
+        if symbol == key.SPACE:
+            self.keys["SPACE"] = True
+            self.fire = True
+            print("fire")
+
 
     def on_key_release(self, symbol, mod):
         if symbol == key.LEFT:
@@ -44,6 +48,10 @@ class Tank(GameObject):
             self.keys["UP"] = False
         if symbol == key.DOWN:
             self.keys["DOWN"] = False
+        if symbol == key.SPACE:
+            self.keys["SPACE"] = False
+            self.fire = False
+            print("fire")
 
     def update(self, dt):
         if self.keys["left"]:
@@ -61,6 +69,7 @@ class Tank(GameObject):
 
 
 
+
 class Blocks(GameObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -70,5 +79,5 @@ class Blocks(GameObject):
 class Bullet(GameObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        pyglet.clock.schedule_once(self.self_destruct, 0.5)
         self.base_speed = 15
+
